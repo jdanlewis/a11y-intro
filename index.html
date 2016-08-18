@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<!-- Theme options: black, white, league, beige, sky, night, serif, simple, solarized-->
 		<link rel="stylesheet" href="css/theme/serif.css">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -31,7 +32,97 @@
 					<h1>Intro to Web Accessibility</h1>
 					<p><strong>Dan Lewis</strong><br>Clemson University</p>
 				</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>What is Web Accessibility?</h2>
+					<blockquote>
+						Web accessibility means that people with disabilities can use the Web.
+					</blockquote>
+					<p>
+						<small>W3C Web Accessibility Initiative (WAI)</small>
+					</p>
+				</section>
+				<section>
+					<h2>What is Web Accessibility? (continued)</h2>
+					<blockquote>
+						More specifically, Web accessibility means that people with disabilities can perceive,
+						understand, navigate, and interact with the Web, and that they can contribute to the Web.
+					</blockquote>
+					<p>
+						<small>W3C Web Accessibility Initiative (WAI)</small>
+					</p>
+				</section>
+				<section>
+					<h2>Why? Appeal to Authority</h2>
+					<img src="./res/doj.png" alt="Letterhead from U.S. Department of Justice, Civil Rights Division, regarding Americans with Disabilities Act Investigation">
+				</section>
+				<section>
+					<h2>ADA: Americans with Disabilities Act</h2>
+					<ul>
+						<li>Prohibits discrimination and ensures equal opportunity for persons with disabilities</li>
+						<li>Requires reasonable accommodations be provided in meeting the needs of individuals with disabilities</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Rehabilitation Act<br>Section 504</h2>
+					<ul>
+						<li>Federal law to protect individuals with disabilities in programs that receive federal financial assistance</li>
+						<li>This includes any college or university that receives federal financial assistance</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Rehabilitation Act<br>Section 508</h2>
+					<ul>
+						<li>1998 Amendment to the Rehabilitation Act</li>
+						<li>Requires federal agencies to make their information technology accessible to people with disabilities</li>
+					</ul>
+				</section>
+				<section>
+					<h2>International Law</h2>
+					<ul>
+						<li>Australia: Disability Discrimination Act of 1992</li>
+						<li>France: Law for the equality of rights and opportunities, the participation and citizenship of people with disabilities</li>
+						<li>Germany: Federal Ordinance on Barrier-Free Information Technology</li>
+						<li>Ireland: Irish National Disability Authority IT Accessibility Guidelines</li>
+						<li>New Zealand: E-Government initiative</li>
+						<li>...the list goes on</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Why? Human Rights</h2>
+					<p>UN Convention on the Rights of Persons with Disabilities</p>
+					<ul>
+						<li>To enable persons with disabilities to live independently and participate fully in all aspects of life</li>
+						<li>To ensure that persons with disabilities can exercise the right to freedom of expression and opinion</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Why? Appeal to Emotion</h2>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/UrvaSqN76h4" frameborder="0" allowfullscreen></iframe>
+				</section>
+				<section>
+					<h2>Why? Nerd Sniping</h2>
+					<img src="res/nerd_sniping.png" alt="Comic strip" longdesc="nerdsnipe">
+					<div id="nerdsnipe" class="visually-hidden">
+						<p>A person wearing a hat is sitting in a chair and begins speaking to a bystander.</p>
+						<p>Person in Hat: There's a certain type of brain that's easily disabled.</p>
+						<p>If you show it an interesting problem, it involuntariliy drops everything else to work on it.</p>
+						<p>This has led me to invent a new sport: nerd sniping.</p>
+						<p>See that physicist crossing the road?</p>
+						<p>Hey!</p>
+						<p>The Person wearing the hat holds up a sign that reads: On this infinite grid of ideal one-ohm resistors, what's the equivalent resistance between the two marked nodes?</p>
+						<p>Physicist: It's... hmm. Interesting. Maybe if you start with... No, wait. Hmm... You could...</p>
+						<p>(A truck zooms by.)</p>
+						<p>Bystander: I will have no part in this.</p>
+						<p>Person in Hat: C'mon, make a sign. It's fun! Physicists are two points, mathematicians three.</p>
+					</div>
+					<p>
+					<small><a href="https://xkcd.com/356/" target="_blank">XKCD</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>Reading Comments on Instagram</h2>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/0i1k3srHKAA" frameborder="0" allowfullscreen></iframe>
+				</section>
 			</div>
 		</div>
 
@@ -42,7 +133,7 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
