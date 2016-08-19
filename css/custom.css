@@ -6,3 +6,11 @@
   height:1px;
   overflow:hidden;
 }
+
+.reveal a {
+  text-decoration: underline;
+}
+
+.reveal .small {
+  font-size: 67%;
+}

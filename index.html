@@ -37,8 +37,8 @@
 					<blockquote>
 						Web accessibility means that people with disabilities can use the Web.
 					</blockquote>
-					<p>
-						<small>W3C Web Accessibility Initiative (WAI)</small>
+					<p class="small">
+						<a href="https://www.w3.org/WAI/intro/accessibility.php" target="_blank">W3C Web Accessibility Initiative (WAI)</a>
 					</p>
 				</section>
 				<section>
@@ -47,9 +47,20 @@
 						More specifically, Web accessibility means that people with disabilities can perceive,
 						understand, navigate, and interact with the Web, and that they can contribute to the Web.
 					</blockquote>
-					<p>
-						<small>W3C Web Accessibility Initiative (WAI)</small>
+					<p class="small">
+						<a href="https://www.w3.org/WAI/intro/accessibility.php" target="_blank">W3C Web Accessibility Initiative (WAI)</a>
 					</p>
+				</section>
+				<section>
+					<h2>Not just blind people</h2>
+					<ul>
+						<li>Visual</li>
+						<li>Cognitive</li>
+						<li>Auditory</li>
+						<li>Physical</li>
+						<li>Speech</li>
+						<li>Neurological</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Why? Appeal to Authority</h2>
@@ -89,10 +100,24 @@
 				</section>
 				<section>
 					<h2>Why? Human Rights</h2>
-					<p>UN Convention on the Rights of Persons with Disabilities</p>
+					<blockquote>To enable persons with disabilities to live independently and participate fully in all aspects of life</blockquote>
+					<blockquote>To ensure that persons with disabilities can exercise the right to freedom of expression and opinion</blockquote>
+					<p class="small"><a href="http://www.un.org/disabilities/convention/conventionfull.shtml" target="_blank">UN Convention on the Rights of Persons with Disabilities</a></p>
+				</section>
+				<section>
+					<h2>Why? The Future You</h2>
+					<blockquote>We're all just temporarily abled.</blockquote>
+					<p class="small">
+						Cindy Li
+						<br>
+						<a href="http://blog.invisionapp.com/accessibility-design-for-the-future/" target="_blank">Design for the Future</a>
+					</p>
+				</section>
+				<section>
+					<h2>Why? Accessibility Benefits Everyone</h2>
 					<ul>
-						<li>To enable persons with disabilities to live independently and participate fully in all aspects of life</li>
-						<li>To ensure that persons with disabilities can exercise the right to freedom of expression and opinion</li>
+						<li>Some disabilities are temporary or situational: concussion, broken limb, or carrying grocery bags</li>
+						<li>Many accessibility features benefit those without disabilities: captions, voice dictation, zoom</li>
 					</ul>
 				</section>
 				<section>
@@ -115,13 +140,113 @@
 						<p>Bystander: I will have no part in this.</p>
 						<p>Person in Hat: C'mon, make a sign. It's fun! Physicists are two points, mathematicians three.</p>
 					</div>
-					<p>
-					<small><a href="https://xkcd.com/356/" target="_blank">XKCD</a></small>
+					<p class="small">
+						<a href="https://xkcd.com/356/" target="_blank">XKCD</a>
 					</p>
+				</section>
+				<section>
+					<h2>Nerd Sniping Accessibility</h2>
+					<img src="res/www.png" alt="An image a sign that reads: On this infinite web of content, who can we enable disabled people to perceive, understand, navigate, and contribute content?">
 				</section>
 				<section>
 					<h2>Reading Comments on Instagram</h2>
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/0i1k3srHKAA" frameborder="0" allowfullscreen></iframe>
+				</section>
+				<section>
+					<h2>Clemson's Home Page</h2>
+					<a href="http://www.clemson.edu" target="_blank">
+					<img src="res/clemson.png" alt="A screenshot of the Clemson University homepage">
+					</a>
+				</section>
+				<section>
+					<h2>How?</h2>
+					<ul>
+						<li>Automated Testing</li>
+						<li>Manual Testing</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Automated Testing: Pros</h2>
+					<ul>
+						<li>Quick: can scan a lot of code at once</li>
+						<li>Provides a good baseline</li>
+						<li>May catch errors that were otherwise overlooked</li>
+						<li>Can report some errors with certainty (i.e. missing alternative text)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Automated Testing: Cons</h2>
+					<ul>
+						<li>False positives; false negatives</li>
+						<li>Many errors require human analysis</li>
+						<li>Not as thorough as manual testing</li>
+						<li>Alternate text: accurate? decorative?</li>
+						<li>Difficulty determining color contrast</li>
+						<li>Difficulty with complex widgets &amp; rich content</li>
+						<li>Nuances between screen readers and browsers</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Manual Testing</h2>
+					<ul>
+						<li>There's no substitute for a human</li>
+						<li>Manual testing can be tedious</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tools: WAVE Toolbar</h2>
+					<ul>
+						<li>Identifies common errors and warnings</li>
+						<li>Summarizes accessibility features</li>
+						<li>Provides structural information, ability to toggle CSS, and contrast checks</li>
+					</ul>
+					<p>
+						<a href="http://wave.webaim.org/extension/" target="_blank">WAVE Chrome Extension</a>
+					</p>
+				</section>
+				<section>
+					<h2>Tools: Google Accessibility Developer Tools</h2>
+					<ul>
+						<li>Adds accessibility audit and elements tab to dev tools</li>
+						<li>Can audit dynamically generated content</li>
+						<li>Provides links to detailed error descriptions</li>
+					</ul>
+					<p>
+						<a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en" target="_blank">Google Accessibility Developer Tools</a>
+					</p>
+				</section>
+				<section>
+					<h2>Tools: High Contrast Mode</h2>
+					<ul>
+						<li>Shows websites in high contrast mode</li>
+						<li>Affects users with low vision</li>
+						<li>Colorblind people may benefit</li>
+						<li>Helpful for people sensitive to light</li>
+					</ul>
+					<p>
+						<a href="https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph/reviews" target="_blank">Google High Contrast Extension</a>
+					</p>
+				</section>
+				<section>
+					<h2>Tools: Color Contrast Checkers</h2>
+					<ul>
+						<li>Ensures color contrast is sufficient for low vision users</li>
+					</ul>
+					<p>
+						<a href="http://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a>
+						<br>
+						<a href="https://www.paciellogroup.com/resources/contrastanalyser/" target="_blank">Colour Contrast Analyser</a>
+					</p>
+				</section>
+				<section>
+					<h2>Tools: Chrome Lens</h2>
+					<ul>
+						<li>Simulates visual deficiencies</li>
+						<li>Track path of a screen reader user</li>
+					</ul>
+					<p>
+						<a href="http://chromelens.xyz/" target="_blank">Chrome Lens</a>
+					</p>
 				</section>
 			</div>
 		</div>
