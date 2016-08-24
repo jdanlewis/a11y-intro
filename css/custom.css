@@ -14,3 +14,9 @@
 .reveal .small {
   font-size: 67%;
 }
+
+.reveal .hljs {
+  white-space: pre;
+  word-wrap: break-word;
+  background: #171717;
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Introduction to Web Accessibility: Part 2</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- Theme options: black, white, league, beige, sky, night, serif, simple, solarized-->
+		<link rel="stylesheet" href="css/theme/serif.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Accessibility helper -->
+		<link rel="stylesheet" href="plugin/accessibility/helper.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Intro to Web Accessibility</h1>
+					<h2>Part 2</h2>
+					<p><strong>Dan Lewis</strong><br>Clemson University</p>
+				</section>
+				<section>
+					<h2>Goals</h2>
+					<ul>
+						<li>Identify common accessibility issues</li>
+						<li>Implement changes to fix them</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Focus</h2>
+					<ul>
+						<li>Visual focus</li>
+						<li>Keyboard control</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Focus Outline</h3>
+					<a href="http://www.example.com">Example Link 1</a><br>
+					<a href="http://www.example.com" style="outline:none">Example Link 2</a><br>
+					<a href="http://www.example.com">Example Link 3</a>
+					<pre><code class="hljs">
+&lt;a href="//www.example.com"&gt;Example Link 1&lt;/a&gt;
+&lt;a href="//www.example.com" style="outline:none"&gt;Example Link 2&lt;/a&gt;
+&lt;a href="//www.example.com"&gt;Example Link 3&lt;/a&gt;
+					</code></pre>
+					<p><a href="http://outlinenone.com/" target="_blank">Outline None</a></p>
+				</section>
+				<section>
+					<h3>Keyboard Navigation</h3>
+					<p>Anything that requires mouse only?</p>
+					<p>DOM Order</p>
+				</section>
+				<section>
+					<h3>Skip Links</h3>
+				</section>
+				<section>
+					<h3>Tab Index</h3>
+				</section>
+				<section>
+					<h2>Semantics</h2>
+					<ul>
+						<li>What is this thing?</li>
+						<li>What does it do?</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Page Title</h3>
+				</section>
+				<section>
+					<h3>Language</h3>
+				</section>
+				<section>
+					<h3>Headings</h3>
+				</section>
+				<section>
+					<h3>Labels</h3>
+				</section>
+				<section>
+					<h3>Generic Link Text</h3>
+				</section>
+				<section>
+					<h3>Underlined Links</h3>
+				</section>
+				<section>
+					<h3>Alt Text</h3>
+				</section>
+				<section>
+					<h3>Images as Text</h3>
+				</section>
+				<section>
+					<h3>Captioned Media</h3>
+				</section>
+				<section>
+					<h3>Tables</h3>
+				</section>
+				<section>
+					<h3>Buttons, Links as Buttons</h3>
+				</section>
+				<section>
+					<h3>Landmarks</h3>
+				</section>
+				<section>
+					<h2>Design</h2>
+					<ul>
+						<li>Sensory characteristics</li>
+						<li>Use of color</li>
+						<li>Strobing content</li>
+						<li>Multiple devices</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Sensory Characteristics</h3>
+					Color, Shape, Location, Sound
+				</section>
+				<section>
+					<h3>Color Contrast</h3>
+				</section>
+				<section>
+					<h3>Strobing Content</h3>
+				</section>
+				<section>
+					<h3>Zoom</h3>
+				</section>
+				<section>
+					<h3>Responsiveness</h3>
+				</section>
+				<section>
+					<h3>Touch Targets</h3>
+				</section>
+				<section>
+					<h2>A little tricky</h2>
+				</section>
+				<section>
+					<h2>Form Errors</h2>
+				</section>
+				<section>
+					<h2>Modal Dialogs</h2>
+				</section>
+				<section>
+					<h2>Offscreen Content</h2>
+				</section>
+				<section>
+					<h2>Keyboard Traps</h2>
+				</section>
+				<section>
+					<h2>ARIA</h2>
+				</section>
+				<section>
+					<h2>Dynamic Updates &amp; Single Page Apps</h2>
+				</section>
+				<section>
+					<h2>Live Regions</h2>
+				</section>
+				<section>
+					<h2>Questions?</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+				slideNumber: true,
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					// Accessibility helper: https://github.com/marcysutton/reveal-a11y
+					{ src: 'plugin/accessibility/helper.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
