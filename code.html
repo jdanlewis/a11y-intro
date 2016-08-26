@@ -34,17 +34,53 @@
 					<p><strong>Dan Lewis</strong><br>Clemson University</p>
 				</section>
 				<section>
-					<h2>Goals</h2>
+					<h2>Goal</h2>
+					<p>Identify common accessibility issues</p>
 					<ul>
-						<li>Identify common accessibility issues</li>
-						<li>Implement changes to fix them</li>
+						<li>Focus</li>
+						<li>Semantics</li>
+						<li>Design</li>
+						<li>Advanced</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Focus</h2>
 					<ul>
+						<li>Keyboard navigation</li>
 						<li>Visual focus</li>
-						<li>Keyboard control</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Keyboard Navigation</h3>
+					<p>
+					Can you navigate the website using only the keyboard?<br>Is there anything that <em>requires</em> the mouse?
+					</p>
+				</section>
+				<section>
+					<h3>DOM Order</h3>
+					<ul>
+						<li>Document Object Model</li>
+						<li>tabindex</li>
+						<li>element.focus()</li>
+					</ul>
+				</section>
+				<section>
+					<h3>tabindex</h3>
+					<pre><code class="hljs center">
+&lt;div tabindex="-1"&gt;&lt;/div&gt;
+					</code></pre>
+					<ul>
+						<li>negative: element is focusable programmatically only</li>
+						<li>zero: element is focusable; in DOM order</li>
+						<li>positive: element is focusable; relative order</li>
+					</ul>
+				</section>
+				<section>
+					<h3>element.focus()</h3>
+					<ul>
+						<li>Focus managed with JavaScript</li>
+						<li>Menus, dialogs, complex widgets</li>
+						<li>Often paired with negative tabindex</li>
 					</ul>
 				</section>
 				<section>
@@ -60,31 +96,58 @@
 					<p><a href="http://outlinenone.com/" target="_blank">Outline None</a></p>
 				</section>
 				<section>
-					<h3>Keyboard Navigation</h3>
-					<p>Anything that requires mouse only?</p>
-					<p>DOM Order</p>
-				</section>
-				<section>
 					<h3>Skip Links</h3>
-				</section>
-				<section>
-					<h3>Tab Index</h3>
-				</section>
-				<section>
-					<h2>Semantics</h2>
 					<ul>
-						<li>What is this thing?</li>
-						<li>What does it do?</li>
+						<li>Allow keyboard users to jump straight to main content</li>
+						<li>Often visually hidden until focused</li>
+						<li>Browser quirks</li>
 					</ul>
 				</section>
 				<section>
-					<h3>Page Title</h3>
+					<h2>Focus: Putting it all together</h2>
+					<ul>
+						<li>Works with just the keyboard</li>
+						<li>Has logical focus order</li>
+						<li>Does not abuse tabindex</li>
+						<li>Uses element.focus() appropriately</li>
+						<li>Visibly shows current focus</li>
+						<li>Provides skip link (with browser quirks)</li>
+					</ul>
+					<p>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex" target="_blank">MDN tabindex documentation</a>
+					</p>
+				</section>
+				<section>
+					<h2>Semantics</h2>
+					<blockquote>
+						"What is this thing and what does it do?"
+					</blockquote>
+					<p class="small"><a href="http://www.karlgroves.com/presentations/" target="_blank">Karl Groves</a></p>
 				</section>
 				<section>
 					<h3>Language</h3>
+					<pre><code class="hljs center">
+&lt;html lang="en"&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h3>Page Title</h3>
+					<pre><code class="hljs center">
+&lt;title&gt;Descriptive and Unique&lt;/title&gt;
+					</code></pre>
 				</section>
 				<section>
 					<h3>Headings</h3>
+					<ul>
+						<li>Use them!</li>
+						<li>Hierarchy</li>
+						<li>Not for font size</li>
+					</ul>
+					<pre><code class="hljs center">
+&lt;h1&gt;Level One&lt;/h1&gt;
+&lt;h2&gt;Level Two&lt;/h2&gt;
+&lt;h3&gt;Level Three&lt;/h3&gt;
+					</code></pre>
 				</section>
 				<section>
 					<h3>Labels</h3>
@@ -145,25 +208,25 @@
 					<h2>A little tricky</h2>
 				</section>
 				<section>
-					<h2>Form Errors</h2>
+					<h3>Form Errors</h3>
 				</section>
 				<section>
-					<h2>Modal Dialogs</h2>
+					<h3>Modal Dialogs</h3>
 				</section>
 				<section>
-					<h2>Offscreen Content</h2>
+					<h3>Offscreen Content</h3>
 				</section>
 				<section>
-					<h2>Keyboard Traps</h2>
+					<h3>Keyboard Traps</h3>
 				</section>
 				<section>
-					<h2>ARIA</h2>
+					<h3>ARIA</h3>
 				</section>
 				<section>
-					<h2>Dynamic Updates &amp; Single Page Apps</h2>
+					<h3>Dynamic Updates &amp; Single Page Apps</h3>
 				</section>
 				<section>
-					<h2>Live Regions</h2>
+					<h3>Live Regions</h3>
 				</section>
 				<section>
 					<h2>Questions?</h2>
