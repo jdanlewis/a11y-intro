@@ -40,7 +40,7 @@
 						<li>Focus</li>
 						<li>Semantics</li>
 						<li>Design</li>
-						<li>Advanced</li>
+						<li>Bonus</li>
 					</ul>
 				</section>
 				<section>
@@ -238,7 +238,7 @@
 						<tbody>
 							<tr>
 								<th scope="col">Year</th>
-								<th scope="col"># Sold</th>
+								<th scope="col">Units Sold</th>
 							</tr>
 							<tr>
 								<td>1990</td>
@@ -258,7 +258,7 @@
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;th scope="col"&gt;Year&lt;/th&gt;
-      &lt;th scope="col"&gt;# Sold&lt;/th&gt;
+      &lt;th scope="col"&gt;Units Sold&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;1990&lt;/td&gt;
@@ -272,10 +272,23 @@
 &lt;/table&gt;</code></pre>
 				</section>
 				<section>
-					<h3>Buttons, Links as Buttons</h3>
+					<h3>Buttons</h3>
+					<button class="example-button" onclick="alert('Hello One')">Example Button 1</button>
+					<a href="#" class="example-button" onclick="alert('Hello Two'); return false;">Example Button 2</a>
+					<pre><code class="hljs center">
+&lt;button&gt;Example Button 1&lt;/button&gt;
+&lt;a href="#"&gt;Example Button 2&lt;/a&gt;
+					</code></pre>
 				</section>
 				<section>
-					<h3>Landmarks</h3>
+					<h3>HTML5 + ARIA Landmarks</h3>
+					<pre><code class="hljs center">
+&lt;header role="banner"&gt;
+&lt;nav role="navigation"&gt;
+&lt;main role="main"&gt;
+&lt;aside role="complementary"&gt;
+&lt;footer role="contentinfo"&gt;
+					</code></pre>
 				</section>
 				<section>
 					<h2>Design</h2>
@@ -344,6 +357,10 @@
 				history: true,
 				transition: 'fade', // none/fade/slide/convex/concave/zoom
 				slideNumber: true,
+				// Disable spacebar
+				keyboard: {
+					32: function(){}
+				},
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },

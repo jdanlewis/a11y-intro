@@ -54,3 +54,24 @@
 .reveal .example-table {
   width: 400px;
 }
+
+.reveal .example-button,
+.reveal .example-button:visited,
+.reveal .example-button:hover,
+.reveal .example-button:focus {
+  border: 2px solid #333;
+  cursor: default;
+  text-decoration: none;
+  color: #333;
+  font-size: 100%;
+  background: #eee;
+  border-radius: 15px;
+  margin: .5em;
+  display: inline-block;
+  padding: 5px;
+  line-height: 2em;
+  font-family: inherit;
+  padding: .5em;
+  margin: .25em;
+}
+
