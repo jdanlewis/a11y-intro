@@ -151,24 +151,125 @@
 				</section>
 				<section>
 					<h3>Labels</h3>
+					<ul>
+						<li>Form controls must have labels</li>
+						<li>Labels must be properly associated</li>
+					</ul>
+					<pre><code class="hljs center">
+&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input id="name"&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h3>Wrapped Labels</h3>
+					<pre><code class="hljs center">
+&lt;label&gt;Name: &lt;input&gt; &lt;/label&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h3>ARIA Labels</h3>
+					<pre><code class="hljs center">
+&lt;button class="icon-search" aria-label="Search"&gt;&lt;/button&gt;
+					</code></pre>
 				</section>
 				<section>
 					<h3>Generic Link Text</h3>
+					<pre><code class="hljs center">
+&lt;a href="http://example.com"&gt;click here&lt;/a&gt;
+					</code></pre>
+					<p>
+					<a href="http://example.com" target="_blank">Click here</a> for an example website!
+					<br>vs.</br>
+					Visit <a href="http://example.com" target="_blank">an example website</a>.
+					</p>
 				</section>
 				<section>
 					<h3>Underlined Links</h3>
+					<p>
+					Visit <a href="http://example.com" target="_blank" style="text-decoration:none">an example website</a>.
+					<br>vs.</br>
+					Visit <a href="http://example.com" target="_blank">an example website</a>.
+					</p>
 				</section>
 				<section>
-					<h3>Alt Text</h3>
+					<h3>Alternative Text</h3>
+					<img src="res/tiger.jpg" alt="A tiger with her cub in the snow">
+					<pre><code class="hljs center">
+&lt;img src="tiger.jpg" alt="A tiger with her cub in the snow"&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h3>Decorative Images</h3>
+					<div class="decorative-images">
+						<img src="res/paw.png" alt="">
+						<span>Clemson Athletics</span>
+					</div>
+					<pre><code class="hljs center">
+&lt;img src="paw.png" alt=""&gt;
+					</code></pre>
 				</section>
 				<section>
 					<h3>Images as Text</h3>
+					<img src="res/wordmark.png" alt="Clemson University" class="wordmark">
+					<pre><code class="hljs center">
+&lt;img src="wordmark.png" alt="Clemson University"&gt;
+					</code></pre>
 				</section>
 				<section>
-					<h3>Captioned Media</h3>
+					<h3>Captions</h3>
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/RCBfdUhrk80" frameborder="0" allowfullscreen></iframe>
+					<p>Synchronized, Equivalent, Accessible</p>
 				</section>
 				<section>
 					<h3>Tables</h3>
+					<ul>
+						<li>Used for data</li>
+						<li>Not used for layout</li>
+						<li>Include table caption and headers</li>
+					</ul>
+					<p class="small">
+					<a href="https://www.registrar.clemson.edu/html/Acad_Cal.htm" target="_blank">Academic Calendar</a>
+					</p>
+				</section>
+				<section>
+					<h3>Example Table</h3>
+					<table class="example-table">
+						<caption>Widgets Sold by Year</caption>
+						<tbody>
+							<tr>
+								<th scope="col">Year</th>
+								<th scope="col"># Sold</th>
+							</tr>
+							<tr>
+								<td>1990</td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>2000</td>
+								<td>5,800</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Example Table Code</h3>
+					<pre><code class="hljs">&lt;table&gt;
+  &lt;caption&gt;Widgets Sold by Year&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Year&lt;/th&gt;
+      &lt;th scope="col"&gt;# Sold&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1990&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2000&lt;/td&gt;
+      &lt;td&gt;5,800&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
 				</section>
 				<section>
 					<h3>Buttons, Links as Buttons</h3>
