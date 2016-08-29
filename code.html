@@ -301,25 +301,77 @@
 				</section>
 				<section>
 					<h3>Sensory Characteristics</h3>
-					Color, Shape, Location, Sound
+					<ul>
+					  <li>Color</li>
+					  <li>Shape</li>
+					  <li>Location</li>
+					  <li>Sound</li>
+					</ul>
 				</section>
 				<section>
 					<h3>Color Contrast</h3>
+					<table>
+						<caption>Contrast Ratios</caption>
+						<tbody>
+							<tr>
+								<th scope="col">Conformance</th>
+								<th scope="col">Normal Text</th>
+								<th scope="col">Large Text</th>
+							</tr>
+							<tr>
+								<th scope="row">AA</th>
+								<td>4.5:1</td>
+								<td>3:1</td>
+							</tr>
+							<tr>
+								<th scope="row">AAA</th>
+								<td>7:1</td>
+								<td>4.5:1</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><em>Large text is at least 18 point or 14 point bold.</em></p>
 				</section>
 				<section>
 					<h3>Strobing Content</h3>
+					<p>Flashes faster than 3 per second can cause seizures for people with photosensitivity.</p>
 				</section>
 				<section>
 					<h3>Zoom</h3>
+
+					<pre><code class="hljs center">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+					</code></pre>
+					Bad: 
+					<pre><code class="hljs center">
+maximum-scale=1
+					</code></pre>
+					<pre><code class="hljs center">
+user-scalable=no
+					</code></pre>
 				</section>
 				<section>
 					<h3>Responsiveness</h3>
+					<ul>
+					  <li>Grid system</li>
+					  <li>Media queries</li>
+					  <li>Flexible images</li>
+					</ul>
+					<p>Read the <a href="http://alistapart.com/article/responsive-web-design" target="_blank">seminal paper</a> on A List Apart.</p>
 				</section>
 				<section>
 					<h3>Touch Targets</h3>
+					<ul>
+					  <li>At least 9mm x 9mm</li>
+					  <li>Include 1mm to 2mm spacing around target</li>
+					</ul>
+					<p>Google's <a href="https://material.google.com/layout/metrics-keylines.html#metrics-keylines-touch-target-size" target="_blank">material design guidelines</a> provide a good example of accessible touch targets.</p>
 				</section>
 				<section>
 					<h2>A little tricky</h2>
+				</section>
+				<section>
+					<h3>ARIA</h3>
 				</section>
 				<section>
 					<h3>Form Errors</h3>
@@ -332,9 +384,6 @@
 				</section>
 				<section>
 					<h3>Keyboard Traps</h3>
-				</section>
-				<section>
-					<h3>ARIA</h3>
 				</section>
 				<section>
 					<h3>Dynamic Updates &amp; Single Page Apps</h3>
