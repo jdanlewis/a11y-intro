@@ -72,7 +72,7 @@
 					<ul>
 						<li>negative: element is focusable programmatically only</li>
 						<li>zero: element is focusable; in DOM order</li>
-						<li>positive: element is focusable; relative order</li>
+						<li>positive: element is focusable; relative order (BAD!)</li>
 					</ul>
 				</section>
 				<section>
@@ -87,11 +87,13 @@
 					<h3>Focus Outline</h3>
 					<a href="http://www.example.com">Example Link 1</a><br>
 					<a href="http://www.example.com" style="outline:none">Example Link 2</a><br>
-					<a href="http://www.example.com">Example Link 3</a>
+					<a href="http://www.example.com">Example Link 3</a><br>
+					<a>Example Link 4</a>
 					<pre><code class="hljs">
 &lt;a href="//www.example.com"&gt;Example Link 1&lt;/a&gt;
 &lt;a href="//www.example.com" style="outline:none"&gt;Example Link 2&lt;/a&gt;
 &lt;a href="//www.example.com"&gt;Example Link 3&lt;/a&gt;
+&lt;a&gt;Example Link 4&lt;/a&gt;
 					</code></pre>
 					<p><a href="http://outlinenone.com/" target="_blank">Outline None</a></p>
 				</section>
@@ -301,6 +303,7 @@
 				</section>
 				<section>
 					<h3>Sensory Characteristics</h3>
+					<p><em>Don't rely solely on sensory characteristics to express meaning.</em></p>
 					<ul>
 					  <li>Color</li>
 					  <li>Shape</li>
@@ -334,7 +337,7 @@
 				</section>
 				<section>
 					<h3>Strobing Content</h3>
-					<p>Flashes faster than 3 per second can cause seizures for people with photosensitivity.</p>
+					<p>Flashes faster than 3 times per second can cause seizures for people with photosensitivity.</p>
 				</section>
 				<section>
 					<h3>Zoom</h3>
@@ -351,7 +354,7 @@ user-scalable=no
 					</code></pre>
 				</section>
 				<section>
-					<h3>Responsiveness</h3>
+					<h3>Responsive Design</h3>
 					<ul>
 					  <li>Grid system</li>
 					  <li>Media queries</li>
@@ -368,22 +371,62 @@ user-scalable=no
 					<p>Google's <a href="https://material.google.com/layout/metrics-keylines.html#metrics-keylines-touch-target-size" target="_blank">material design guidelines</a> provide a good example of accessible touch targets.</p>
 				</section>
 				<section>
-					<h2>A little tricky</h2>
+					<h2>Bonus</h2>
 				</section>
 				<section>
-					<h3>ARIA</h3>
+					<h3>WAI-ARIA</h3>
+					<ul>
+					  <li>The Web Accessibility Initiative Accessible Rich Internet Applications specification</li>
+					  <li>Roles (menu, checkbox)</li>
+					  <li>State and Properties (aria-checked, aria-label, aria-hidden)</li>
+					  <li>Live regions, drag &amp; drop</li>
+					</ul>
+					<p><em>Don't use ARIA if a native control is sufficient!</em></p>
 				</section>
 				<section>
-					<h3>Form Errors</h3>
-				</section>
-				<section>
-					<h3>Modal Dialogs</h3>
-				</section>
-				<section>
-					<h3>Offscreen Content</h3>
+					<h3>Widgets</h3>
+					<ul>
+					  <li>Modal dialogs, date pickers, combo boxes, etc.</li>
+					  <li>Trapping focus</li>
+					</ul>
+					<p><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal" target="_blank">WAI-ARIA Authoring Practices</a></p>
 				</section>
 				<section>
 					<h3>Keyboard Traps</h3>
+					<ul>
+					  <li>Don't trap the keyboard</li>
+					  <li>...unless it should be trapped</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Roving Focus</h3>
+					<p>
+					  Navigating a widget changes its focus. Return to a widget should place return the previous focus.
+					</p>
+					<ul>
+					  <li>Add key handlers to manage focus programmatically</li>
+					  <li>Set tabindex=0 for newly focused element</li>
+					  <li>Set tabindex=-1 for previously focused element</li>
+					</ul>
+					<p>
+					<a href="http://www.oaa-accessibility.org/examplep/treeview1/" target="_blank">Tree View Example</a>
+					</p>
+				</section>
+				<section>
+					<h3>Visually Hidden Content</h3>
+					<pre><code class="hljs">
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+					</code></pre>
+				</section>
+				<section>
+					<h3>Form Errors</h3>
 				</section>
 				<section>
 					<h3>Dynamic Updates &amp; Single Page Apps</h3>
