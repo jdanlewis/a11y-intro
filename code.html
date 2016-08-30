@@ -349,8 +349,9 @@
 				<section>
 					<h3>Zoom</h3>
 
-					<pre><code class="hljs center">
-&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+					<pre><code class="hljs">
+&lt;meta name="viewport" 
+ content="width=device-width, initial-scale=1"&gt;
 					</code></pre>
 					Bad: 
 					<pre><code class="hljs center">
@@ -441,7 +442,13 @@ user-scalable=no
 					<iframe src="aria-live.html" class="example-frame" width="700" height="500" frameborder="2"></iframe>
 				</section>
 				<section>
-					<h3>Dynamic Updates &amp; Single Page Apps</h3>
+					<h3>Single Page Apps</h3>
+					<ul>
+					  <li>Ensure keyboard navigation</li>
+					  <li>Focus should be obvious and apparent at all times</li>
+					  <li>On page changes, update title and set focus to main or h1</li>
+					  <li>Use aria-live to express UI changes</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Questions?</h2>
