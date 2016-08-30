@@ -82,6 +82,13 @@
 						<li>Menus, dialogs, complex widgets</li>
 						<li>Often paired with negative tabindex</li>
 					</ul>
+					<pre><code class="hljs">
+&lt;div id="some-div" tabindex="-1"&gt;&lt;/div&gt;
+					</code></pre>
+					<pre><code class="hljs">
+var el = document.getElementById('some-div');
+el.focus();
+					</code></pre>
 				</section>
 				<section>
 					<h3>Focus Outline</h3>
@@ -397,7 +404,7 @@ user-scalable=no
 					  <li>Modal dialogs, date pickers, combo boxes, etc.</li>
 					  <li>Trapping focus</li>
 					</ul>
-					<p><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal" target="_blank">WAI-ARIA Authoring Practices</a></p>
+					<p><a href="https://www.w3.org/TR/wai-aria-practices-1.1" target="_blank">WAI-ARIA Authoring Practices</a></p>
 				</section>
 				<section>
 					<h3>Keyboard Traps</h3>
@@ -442,9 +449,15 @@ user-scalable=no
 					<iframe src="aria-live.html" class="example-frame" width="700" height="500" frameborder="2"></iframe>
 				</section>
 				<section>
+					<h3>aria-live</h3>
+					<pre><code class="hljs center">
+&lt;div aria-live="polite"&gt;&lt;/div&gt;
+					</code></pre>
+				</section>
+				<section>
 					<h3>Single Page Apps</h3>
 					<ul>
-					  <li>Ensure keyboard navigation</li>
+					  <li>Ensure functional keyboard navigation</li>
 					  <li>Focus should be obvious and apparent at all times</li>
 					  <li>On page changes, update title and set focus to main or h1</li>
 					  <li>Use aria-live to express UI changes</li>
