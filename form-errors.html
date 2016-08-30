@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Accessible Form Errors Example</title>
+<style>
+body {
+  background: white;
+  margin: .5em;
+  color: #333;
+}
+body, input {
+  font-size: 24pt;
+}
+#error {
+  border: 2px solid #a20000;
+  padding: .25em .5em 0 .5em;
+}
+.required {
+  color: #a20000;
+}
+form {
+  margin: .5em 0;
+}
+label {
+  display: block;
+}
+input {
+  border: 2px solid #333;
+  margin-bottom: .25em;
+}
+input[type="submit"] {
+  background: #f0f0f0;
+  margin-top: .5em;
+}
+.hidden {
+  display: none;
+}
+</style>
+  </head>
+  <body>
+    <div class="example-form">
+      <div id="error" class="hidden">
+	<div id="error-message" class="examle-form-message" tabindex="-1"></div>
+	<ol id="errors"></ol>
+      </div>
+      <form action="">
+	<div class="row">
+	  <label for="example-form-first-name">First name <span class="required">(required)</span></label>
+	  <input id="example-form-first-name">
+	</div>
+	<div class="row">
+	  <label for="example-form-last-name">Last name <span class="required">(required)</span></label>
+	  <input id="example-form-last-name">
+	</div>
+	<div>
+	  <input id="submit" type="submit" value="Submit">
+	</div>
+      </form>
+    </div>
+    <script>
+    window.addEventListener('load', function() {
+      var btn = document.getElementById('submit'),
+	firstName = document.getElementById('example-form-first-name'),
+	lastName = document.getElementById('example-form-last-name');
+
+      function validate(e) {
+	e.preventDefault();
+	var valid = true;
+	var errorContainer = document.getElementById('error');
+	var errorMessage = document.getElementById('error-message');
+	var errors = document.getElementById('errors');
+	var count = 0;
+	var required = [
+	  { id: 'example-form-first-name', msg: 'Please enter your first name' },
+	  { id: 'example-form-last-name', msg: 'Please enter your last name' }
+	];
+	while (errors.children.length) {
+	  errors.removeChild(errors.firstChild)
+	}
+	required.forEach(function(required) {
+	  var el = document.getElementById(required.id);
+	  var li, a;
+	  if (el.value == "") {
+	    el.setAttribute('aria-invalid', 'true');
+	    valid = false;
+	    count++;
+	    li = document.createElement('li');
+	    a = document.createElement('a');
+	    a.setAttribute('href', '#' + required.id);
+	    a.textContent = required.msg;
+	    li.appendChild(a);
+	    errors.appendChild(li);
+	  } else {
+	    el.removeAttribute('aria-invalid');
+	  }
+	})
+	if (valid) {
+	  errorContainer.classList.add('hidden');
+	  alert('Success!');
+	} else {
+	  errorContainer.classList.remove('hidden');
+	  if (count > 1) {
+	    errorMessage.textContent = 'The following ' + count + ' errors were found in the information submitted:';
+	  } else {
+	    errorMessage.textContent = 'The following error was found in the information submitted:';
+	  }
+	  errorMessage.focus();
+	}
+      }
+      btn.addEventListener('click', validate);
+    })
+    </script>
+</body>
