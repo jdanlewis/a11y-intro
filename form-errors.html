@@ -4,49 +4,49 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Accessible Form Errors Example</title>
-<style>
-body {
-  background: white;
-  margin: .5em;
-  color: #333;
-}
-body, input {
-  font-size: 24pt;
-}
-#error {
-  border: 2px solid #a20000;
-  padding: .25em .5em 0 .5em;
-}
-.required {
-  color: #a20000;
-}
-form {
-  margin: .5em 0;
-}
-label {
-  display: block;
-}
-input {
-  border: 2px solid #333;
-  margin-bottom: .25em;
-}
-input[type="submit"] {
-  background: #f0f0f0;
-  margin-top: .5em;
-}
-input[aria-invalid="true"] {
-  border: 3px solid #a20000;
-}
-.hidden {
-  display: none;
-}
-</style>
+      <style>
+	body {
+	  background: white;
+	  margin: .5em;
+	  color: #333;
+	}
+	body, input {
+	  font-size: 24pt;
+	}
+	#error {
+	  border: 2px solid #a20000;
+	  padding: .25em .5em 0 .5em;
+	}
+	.required {
+	  color: #a20000;
+	}
+	form {
+	  margin: .5em 0;
+	}
+	label {
+	  display: block;
+	}
+	input {
+	  border: 2px solid #333;
+	  margin-bottom: .25em;
+	}
+	input[type="submit"] {
+	  background: #f0f0f0;
+	  margin-top: .5em;
+	}
+	input[aria-invalid="true"] {
+	  border: 3px solid #a20000;
+	}
+	.hidden {
+	  display: none;
+	}
+      </style>
   </head>
   <body>
     <div class="example-form">
-      <div id="error" class="hidden">
+      <div id="error-container" class="hidden">
 	<div id="error-message" class="examle-form-message" tabindex="-1"></div>
-	<ol id="errors"></ol>
+	<ol id="error-list"></ol>
       </div>
       <form action="">
 	<div class="row">
@@ -64,55 +64,58 @@ input[aria-invalid="true"] {
     </div>
     <script>
     window.addEventListener('load', function() {
-      var btn = document.getElementById('submit'),
-	firstName = document.getElementById('example-form-first-name'),
-	lastName = document.getElementById('example-form-last-name');
 
       function validate(e) {
 	e.preventDefault();
-	var valid = true;
-	var errorContainer = document.getElementById('error');
+	var errorContainer = document.getElementById('error-container');
 	var errorMessage = document.getElementById('error-message');
-	var errors = document.getElementById('errors');
-	var count = 0;
+	var errorList = document.getElementById('error-list');
+	var numErrors = 0;
 	var required = [
 	  { id: 'example-form-first-name', msg: 'Please enter your first name' },
 	  { id: 'example-form-last-name', msg: 'Please enter your last name' }
 	];
-	while (errors.children.length) {
-	  errors.removeChild(errors.firstChild)
+	// Clear previous errors.
+	while (errorList.children.length) {
+	  errorList.removeChild(errorList.firstChild)
 	}
+	// Validate each input.
 	required.forEach(function(required) {
 	  var el = document.getElementById(required.id);
 	  var li, a;
-	  if (el.value == "") {
+	  if (el.value === "") {
+	    numErrors++;
+	    // Set invalid state on input.
 	    el.setAttribute('aria-invalid', 'true');
-	    valid = false;
-	    count++;
+	    // Create error list item.
 	    li = document.createElement('li');
 	    a = document.createElement('a');
 	    a.setAttribute('href', '#' + required.id);
 	    a.textContent = required.msg;
 	    li.appendChild(a);
-	    errors.appendChild(li);
+	    errorList.appendChild(li);
 	  } else {
 	    el.removeAttribute('aria-invalid');
 	  }
 	})
-	if (valid) {
-	  errorContainer.classList.add('hidden');
-	  alert('Success!');
-	} else {
+	// Handle errors, or success.
+	if (numErrors) {
 	  errorContainer.classList.remove('hidden');
-	  if (count > 1) {
-	    errorMessage.textContent = 'The following ' + count + ' errors were found in the information submitted:';
+	  if (numErrors > 1) {
+	    errorMessage.textContent = 'The following ' + numErrors + ' errors were found in the submitted information:';
 	  } else {
-	    errorMessage.textContent = 'The following error was found in the information submitted:';
+	    errorMessage.textContent = 'The following error was found in the submitted information:';
 	  }
 	  errorMessage.focus();
+	} else {
+	  errorContainer.classList.add('hidden');
+	  alert('Success!');
 	}
       }
+
+      var btn = document.getElementById('submit');
       btn.addEventListener('click', validate);
-    })
+
+    });
     </script>
 </body>

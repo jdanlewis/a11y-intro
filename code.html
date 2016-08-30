@@ -178,7 +178,7 @@ el.focus();
 				<section>
 					<h3>Wrapped Labels</h3>
 					<pre><code class="hljs center">
-&lt;label&gt;Name: &lt;input&gt; &lt;/label&gt;
+&lt;label&gt; Name: &lt;input&gt;&lt;/label&gt;
 					</code></pre>
 				</section>
 				<section>
@@ -416,7 +416,7 @@ user-scalable=no
 				<section>
 					<h3>Roving Focus</h3>
 					<p>
-					  Navigating a widget changes its focus. Return to a widget should place return the previous focus.
+					  Navigating a widget changes its focus. Returning to a widget should return to its previous focus.
 					</p>
 					<ul>
 					  <li>Add key handlers to manage focus programmatically</li>
@@ -445,21 +445,21 @@ user-scalable=no
 					</code></pre>
 				</section>
 				<section>
-					<h3>Live Regions</h3>
-					<iframe src="aria-live.html" class="example-frame" width="700" height="500" frameborder="2"></iframe>
-				</section>
-				<section>
 					<h3>aria-live</h3>
 					<pre><code class="hljs center">
 &lt;div aria-live="polite"&gt;&lt;/div&gt;
 					</code></pre>
 				</section>
 				<section>
+					<h3>Live Regions</h3>
+					<iframe src="aria-live.html" class="example-frame" width="700" height="500" frameborder="2"></iframe>
+				</section>
+				<section>
 					<h3>Single Page Apps</h3>
 					<ul>
 					  <li>Ensure functional keyboard navigation</li>
-					  <li>Focus should be obvious and apparent at all times</li>
-					  <li>On page changes, update title and set focus to main or h1</li>
+					  <li>Focus should be apparent at all times, especially after dynamic updates</li>
+					  <li>On page changes, update title and set focus to main container or h1</li>
 					  <li>Use aria-live to express UI changes</li>
 					</ul>
 				</section>
